@@ -1,3 +1,4 @@
+using System.Net.Mime;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,11 @@ app.UseSwaggerUI();
 
 app.MapGet("/", () => "Hello adventure. Please visit a /tavern  ");
 
-app.MapGet("/help", () => "The page help you. /swagger/index.html");
+app.MapGet("/help", async (HttpResponse response) =>
+{
+    response.ContentType = MediaTypeNames.Text.Html;
+    await response.WriteAsync("The <a href='/swagger/index.html'>page</a> help you.");
+});
 
 app.MapGet("/tavern", async() =>
 {

@@ -23,11 +23,13 @@ Creating connection between containers
 docker network create --driver nat rpg-network
 
 2) Connect existed container to network
-docker network connect rpg-network npc_api/server
-docker network connect rpg-network rpg/server
+docker network connect rpg-network rpg
+docker network connect rpg-network npc
 
 
 
 usefull command
 	docker images
 	docker ps -a
+	docker network ls
+	docker network inspect rpg-network
