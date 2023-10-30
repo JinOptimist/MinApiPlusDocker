@@ -1,4 +1,5 @@
-docker network create rpg-network
+# docker network create rpg-network
+docker network create --driver nat rpg-network
 
 
 start cmd /c rise-rabbitmq.bat
