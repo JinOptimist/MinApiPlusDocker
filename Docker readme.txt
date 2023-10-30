@@ -25,7 +25,7 @@ docker network create --driver nat rpg-network
 2) Connect existed container to network
 docker network connect rpg-network rpg
 docker network connect rpg-network npc
-
+docker network connect rpg-network rabbitmq
 
 
 usefull command
